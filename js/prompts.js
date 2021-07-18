@@ -1,7 +1,14 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Employee = require('../lib/Employee');
+const Manager = require('../lib/Manager');
+const Engineer = require('../lib/Engineer');
+const Intern = require('../lib/Intern');
+
 
 function Prompts() {}
+
+let teamArray = [];
 
 Prompts.prototype.cmdLinePrompts = function() {
     inquirer
@@ -13,7 +20,7 @@ Prompts.prototype.cmdLinePrompts = function() {
             },
             {
                 type: 'input',
-                name: 'TMemId',
+                name: 'TMId',
                 message: "Enter Team Manager's employee ID: ",
             },
             {
@@ -28,6 +35,9 @@ Prompts.prototype.cmdLinePrompts = function() {
             },
         ])
         .then((response) => {
+            let teamManager = new Manager(response.TMname, response.TMId, response.TMemail, response.TMoffice);
+            console.log(teamManager);
+            teamArray.push(teamManager);
             promptMenu();
         });
 
@@ -73,6 +83,9 @@ Prompts.prototype.cmdLinePrompts = function() {
                 },
             ])
             .then((response) => {
+                let engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGitHub);
+                console.log(engineer)
+                teamArray.push(engineer);
                 promptMenu();
             })
     }
@@ -97,16 +110,20 @@ Prompts.prototype.cmdLinePrompts = function() {
                 },
                 {
                     type: 'input',
-                    name: 'internGitHub',
-                    message: "Enter Intern's GitHub username: ",
+                    name: 'internSchool',
+                    message: "Enter Intern's school: ",
                 },
             ])
             .then((response) => {
+                let intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
+                teamArray.push(intern);
+                console.log(intern)
                 promptMenu();
             })
     }
 
     finish = () => {
+        console.log(teamArray);
         console.log('Profile has been made.')
     }
 }

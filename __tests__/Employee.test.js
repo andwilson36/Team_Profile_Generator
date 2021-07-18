@@ -9,7 +9,7 @@ describe('Employee', () => {
 
             const result = new Employee(name, id, email);
 
-            expect(result.name).toEqual(name);
+            expect(result.emName).toEqual(name);
         });
     });
     describe('id', () => {
