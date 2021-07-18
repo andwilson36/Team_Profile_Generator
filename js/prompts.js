@@ -1,14 +1,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Employee = require('../lib/Employee');
+const Template = require('../src/template');
 const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
+const generateSite = new Template();
 
 function Prompts() {}
 
-let teamArray = [];
+global.teamArray = [];
 
 Prompts.prototype.cmdLinePrompts = function() {
     inquirer
@@ -124,8 +125,14 @@ Prompts.prototype.cmdLinePrompts = function() {
 
     finish = () => {
         console.log(teamArray);
-        console.log('Profile has been made.')
+        writeToFile();
     }
+}
+
+function writeToFile() {
+    fs.writeFile(`index.html`, generateSite.generate(), (err) =>
+    err ? console.error(err) : console.log('Profile has been made.')
+    );
 }
 
 module.exports = Prompts;
