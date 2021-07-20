@@ -36,7 +36,6 @@ Prompts.prototype.cmdLinePrompts = function() {
         ])
         .then((response) => {
             let teamManager = new Manager(response.TMname, response.TMId, response.TMemail, response.TMoffice);
-            console.log(teamManager);
             teamArray.push(teamManager);
             promptMenu();
         });
@@ -84,7 +83,6 @@ Prompts.prototype.cmdLinePrompts = function() {
             ])
             .then((response) => {
                 let engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGitHub);
-                console.log(engineer)
                 teamArray.push(engineer);
                 promptMenu();
             })
@@ -117,13 +115,11 @@ Prompts.prototype.cmdLinePrompts = function() {
             .then((response) => {
                 let intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
                 teamArray.push(intern);
-                console.log(intern)
                 promptMenu();
             })
     }
 
     finish = () => {
-        console.log(teamArray);
         createWebsite.build(teamArray);
     }
 }

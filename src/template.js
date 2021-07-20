@@ -102,7 +102,6 @@ generateWebsite.prototype.build = function (teamArray) {
 
   function buildTemplate(teamArray) {
       let template  = templateStart + makeCards(teamArray) + templateEnd;
-      console.log(template);
       return template; 
   }
   writeToFile(teamArray);
