@@ -96,7 +96,7 @@ This snippet shows how after making a employee it prompts a menu and will naviga
 ![](/images/prompt_menu.png)
 
 This snippet shows the objects being shifted out of the array and the cards being put in the HTML file.
-![](/images/array)
+![](/images/array.png)
 
 ## License
 The source code is licensed under MIT.
