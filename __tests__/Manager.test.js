@@ -5,9 +5,9 @@ describe('Manager', () => {
         it('should return the office number of the manager', () => {
             const offNum = '1';
 
-            const result = new Manager(offNum);
+            const result = new Manager('name', '1', 'email', offNum);
 
-            expect(result.officeNumber).toEqual(offNum);
+            expect(result.getOfficeNumber()).toEqual(offNum);
         });
     });
     describe('getRole', () => {

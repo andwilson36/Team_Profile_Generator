@@ -5,9 +5,9 @@ describe('Engineer', () => {
         it('should return the github info of the engineer', () => {
             const github = 'information';
 
-            const result = new Engineer(github);
+            const result = new Engineer('name', '1', 'url', github);
 
-            expect(result.github).toEqual(github);
+            expect(result.getGithub()).toEqual(github);
         });
     });
     describe('role',  () => {

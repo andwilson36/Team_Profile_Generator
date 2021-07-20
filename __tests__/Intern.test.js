@@ -1,13 +1,13 @@
 const Intern = require('../lib/Intern');
 
 describe('Intern', () => {
-    describe('github', () => {
+    describe('school', () => {
         it('should return the school info of the intern', () => {
             const school = 'UTA';
 
-            const result = new Intern(school);
+            const result = new Intern('name', '1', 'email', school);
 
-            expect(result.school).toEqual(school);
+            expect(result.getSchool()).toEqual(school);
         });
     });
     describe('role',  () => {
