@@ -90,11 +90,13 @@ You can also refer to the [media](#Media) section for a video demo.
 ## Media
 This is a short video on how to use the application:
 
+https://user-images.githubusercontent.com/71351474/126408613-ccaecb15-021b-4f95-add1-280265463ed4.mp4
 
+This snippet shows how after making a employee it prompts a menu and will navigate the user to where they selected. 
+![](/images/prompt_menu.png)
 
-Here is a code snippet showing the writeToFile function which uses the user input to print out what the user wanted on the md file.
-
-
+This snippet shows the objects being shifted out of the array and the cards being put in the HTML file.
+![](/images/array)
 
 ## License
 The source code is licensed under MIT.
