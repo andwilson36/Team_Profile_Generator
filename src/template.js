@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function generateWebsite() { }
-
+// combines the html and inserts the data into cards to be shown to the user
 generateWebsite.prototype.build = function (teamArray) {
   let templateStart = `
   <!doctype html>
@@ -29,13 +29,13 @@ generateWebsite.prototype.build = function (teamArray) {
     </body>
   </html>
 `;
-
+  // write to file function
   function writeToFile(teamArray) {
     fs.writeFile(`./dist/index.html`, buildTemplate(teamArray), (err) =>
       err ? console.error(err) : console.log('Profile has been made.')
     );
   }
- 
+//  creates the cards from the array of data
   makeCards = (teamArray) => {
     for (let i = 0; i < teamArray.length; i++) {
       if (teamArray[i].role === 'Manager') {
@@ -93,13 +93,14 @@ generateWebsite.prototype.build = function (teamArray) {
         teamArray.push(card);
       }
     }
+    // takes the objects out of the array so only html elements are shown
     numOfObjects = teamArray.length / 2;
     for(let i = 0; i < numOfObjects; i++) {
       teamArray.shift();
     }
     return teamArray.join(' ');
   }
-
+  // sends template to the write file function
   function buildTemplate(teamArray) {
       let template  = templateStart + makeCards(teamArray) + templateEnd;
       return template; 

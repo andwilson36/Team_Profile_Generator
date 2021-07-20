@@ -9,7 +9,7 @@ const createWebsite = new GenerateWebsite();
 function Prompts() {}
 
 var teamArray = [];
-
+// prompt user for info needed to build html
 Prompts.prototype.cmdLinePrompts = function() {
     inquirer
         .prompt([
@@ -120,8 +120,9 @@ Prompts.prototype.cmdLinePrompts = function() {
     }
 
     finish = () => {
+        // calls template.js to build html using the array of data needed
         createWebsite.build(teamArray);
     }
 }
-
+// exports Prompts to be called from index.js
 module.exports = Prompts;
