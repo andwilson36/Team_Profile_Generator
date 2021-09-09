@@ -94,7 +94,7 @@ Link to video: https://drive.google.com/file/d/1aAbNZL513ydNIQVmpkuGytPXO3O5QXB0
 
 https://user-images.githubusercontent.com/71351474/126408613-ccaecb15-021b-4f95-add1-280265463ed4.mp4
 
-This snippet shows how after making a employee it prompts a menu and will navigate the user to where they selected. 
+This snippet shows how after making a employee it prompts a menu and will navigate the user to where they chose. 
 ![](/images/prompt_menu.png)
 
 This snippet shows the objects being shifted out of the array and the cards being put in the HTML file.
